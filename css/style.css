@@ -1,0 +1,177 @@
+:root {
+  --light-green: hsl(100, 62%, 85%);
+  --rasberry-pink: hsl(328, 73%, 46%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --header-font-family: 'Luckiest Guy';
+  --font-family: 'Quicksand', sans-serif;
+  --header-font-size: 2.2rem;
+  --body-font-size: 1.5rem;
+  --semi-bold: 600;
+  --regular: 400;
+}
+
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+main {
+  font-family: var(--font-family);
+  font-weight: var(--regular);
+  padding: 20px;
+  background-color: var(--white);
+  min-height: 100vh;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-green);
+  padding: 20px 30px;
+}
+
+.nav-logo {
+  font-family: var(--header-font-family);
+  letter-spacing: 0.2rem;
+  font-weight: var(--regular);
+  font-size: var(--header-font-size);
+  font-weight: bold;
+  color: #ca1f7b;
+  text-decoration: none;
+}
+
+/* Drop Down*/
+.dropbtn {
+  font-family: var(--font-family);
+  background-color: var(--rasberry-pink);
+  color: var(--white);
+  padding: 12px 16px;
+  font-size: var(--body-font-size);
+  font-weight: var(--semi-bold);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  font-family: var(--font-family);
+  font-weight: var(--semi-bold);
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--white);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px black;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: var(--black);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--light-green);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn:hover {
+  background-color: var(--black);
+}
+
+/* Pallete generator content*/
+.intro {
+  font-size: var(--body-font-size);
+  text-align: center;
+  margin: 40px 0;
+  color: var(--rasberry-pink);
+}
+
+.palette-container {
+  display: flex;
+  flex-direction: column; /* my note: stacks colors vertically on small screens */
+  height: 60vh;
+  border-radius: 8px;
+  overflow: hidden; /* my note: keeps the corners rounded */
+  box-shadow: 0px 4px 15px;
+}
+
+.color-column {
+  flex: 1; /* my note: each column takes up equal space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-size: var(--body-font-size);
+  font-weight: var(--semi-bold);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#generate-btn {
+  background-color: var(--rasberry-pink);
+  color: var(--light-green);
+  padding: 15px 30px;
+  font-size: var(--body-font-size);
+  font-weight: var(--semi-bold);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid black;
+}
+
+#generate-btn:hover {
+  background-color: var(--light-green);
+  color: var(--rasberry-pink);
+}
+
+/* Color picker page */
+.tool-container {
+  color: var(--rasberry-pink);
+  font-size: var(--body-font-size);
+  text-align: center;
+  padding: 20px;
+}
+
+.picker-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+
+  #color-input {
+    width: 150px;
+    height: 150px;
+    border: none;
+    padding: 0;
+  }
+
+  #color-preview {
+    font-size: var(--header-font-size);
+    width: 250px;
+    height: 100px;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .palette-container {
+      flex-direction: row;
+    }
+  }
+}
